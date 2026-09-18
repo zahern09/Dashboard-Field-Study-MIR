@@ -1,6 +1,0 @@
-streamlit
-gspread
-google-auth
-pandas
-folium
-streamlit-folium
