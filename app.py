@@ -29,13 +29,8 @@ st.markdown("""
 # Konfigurasi Akses
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 # Membaca credentials dari Secrets di Streamlit Cloud
-if "gcp_service_account" in st.secrets:
-    # Mengambil dictionary dari Secrets
-    creds_dict = dict(st.secrets["gcp_service_account"])
-    
-    # Memastikan format newline di private_key terbaca dengan benar
-    creds_dict["private_key"] = creds_dict["private_key"].replace("\\n", "\n")
-    
+if "GCP_JSON" in st.secrets:
+    creds_dict = json.loads(st.secrets["GCP_JSON"])
     creds = Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
 else:
     creds = Credentials.from_service_account_file("credentials.json", scopes=SCOPES)
