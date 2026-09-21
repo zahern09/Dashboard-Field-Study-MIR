@@ -1,0 +1,8 @@
+streamlit
+gspread
+google-auth
+pandas
+streamlit_folium
+streamlit-gsheets
+st-gsheets-connection
+folium
