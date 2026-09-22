@@ -26,44 +26,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- SIDEBAR NAVIGASI ---
-with st.sidebar:
-    # (Opsional) Tampilkan Logo & Judul di Sidebar
-    # st.image("Logo MIR 26.jfif", width=120)
-    st.markdown("<h2 style='color: white; font-size: 20px; font-weight: bold;'>Dashboard MIR</h2>", unsafe_allow_html=True)
-    st.write("---")
-    
-    # Navigasi Menu Modern ber-Ikon
-    menu = option_menu(
-        menu_title="PILIH MENU",
-        options=["Itinerary Hari ke Hari", "Estimasi Biaya", "Peta Destinasi", "Ajukan Surat Izin"],
-        icons=["calendar-week", "calculator", "geo-alt", "file-earmark-text"],
-        menu_icon="compass",
-        default_index=0,
-        styles={
-            "container": {"padding": "5px!", "background-color": "#0A2540"},
-            "icon": {"color": "#93C5FD", "font-size": "16px"}, 
-            "nav-link": {
-                "font-size": "14px",
-                "text-align": "left",
-                "margin": "5px 0px",
-                "color": "#E2E8F0",
-                "padding": "10px 15px",
-                "border-radius": "8px"
-            },
-            "nav-link-selected": {
-                "background-color": "#1E3A8A",
-                "color": "#FFFFFF",
-                "font-weight": "600"
-            },
-            "menu-title": {
-                "color": "#94A3B8",
-                "font-size": "12px",
-                "font-weight": "bold",
-                "letter-spacing": "1px"
-            }
-        }
-    )
     
 # Custom CSS untuk efek kartu (card layout) dan warna Biru Navy
 st.markdown("""
@@ -128,12 +90,45 @@ sheet = client.open_by_key(SPREADSHEET_ID).worksheet("Kebutuhan_Surat")
 LOGO = "Logo MIR 26.jfif"
 st.set_page_config(page_title="Dashboard Itinerary & Perizinan MIR UNPAD", page_icon = LOGO, layout="wide")
 
-st.sidebar.image(LOGO, width = 120)
-st.sidebar.title("Dashboard Itinerary Field Study MIR UNPAD")
-menu = st.sidebar.radio(
-    "Pilih Menu:", 
-    ["Itinerary Hari ke Hari", "Estimasi Biaya", "Peta Destinasi", "📄 Ajukan Surat Izin"]
-)
+# --- SIDEBAR NAVIGASI ---
+with st.sidebar:
+    # (Opsional) Tampilkan Logo & Judul di Sidebar
+    st.image(LOGO, width=120)
+    st.markdown("<h2 style='color: white; font-size: 20px; font-weight: bold;'>Dashboard MIR</h2>", unsafe_allow_html=True)
+    st.write("---")
+    
+    # Navigasi Menu Modern ber-Ikon
+    menu = option_menu(
+        menu_title="PILIH MENU",
+        options=["Itinerary Hari ke Hari", "Estimasi Biaya", "Peta Destinasi", "Ajukan Surat Izin"],
+        icons=["calendar-week", "calculator", "geo-alt", "file-earmark-text"],
+        menu_icon="compass",
+        default_index=0,
+        styles={
+            "container": {"padding": "5px!", "background-color": "#0A2540"},
+            "icon": {"color": "#93C5FD", "font-size": "16px"}, 
+            "nav-link": {
+                "font-size": "14px",
+                "text-align": "left",
+                "margin": "5px 0px",
+                "color": "#E2E8F0",
+                "padding": "10px 15px",
+                "border-radius": "8px"
+            },
+            "nav-link-selected": {
+                "background-color": "#1E3A8A",
+                "color": "#FFFFFF",
+                "font-weight": "600"
+            },
+            "menu-title": {
+                "color": "#94A3B8",
+                "font-size": "12px",
+                "font-weight": "bold",
+                "letter-spacing": "1px"
+            }
+        }
+    )
+
 
 if menu == "Itinerary Hari ke Hari":
     st.title("📅 Itinerary Field Study MIR UNPAD 2026")
