@@ -9,6 +9,62 @@ from streamlit_gsheets import GSheetsConnection
 import gspread
 from google.oauth2.service_account import Credentials
 
+from streamlit_option_menu import option_menu
+
+# CSS tambahan untuk mempercantik padding sidebar dan logo
+st.markdown("""
+    <style>
+    /* Mengubah warna teks di dalam sidebar menjadi putih */
+    section[data-testid="stSidebar"] {
+        color: #FFFFFF;
+    }
+    
+    /* Jarak antara logo dan judul di sidebar */
+    [data-testid="stSidebar"] img {
+        margin-bottom: 15px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# --- SIDEBAR NAVIGASI ---
+with st.sidebar:
+    # (Opsional) Tampilkan Logo & Judul di Sidebar
+    # st.image("Logo MIR 26.jfif", width=120)
+    st.markdown("<h2 style='color: white; font-size: 20px; font-weight: bold;'>Dashboard MIR</h2>", unsafe_allow_html=True)
+    st.write("---")
+    
+    # Navigasi Menu Modern ber-Ikon
+    menu = option_menu(
+        menu_title="PILIH MENU",
+        options=["Itinerary Hari ke Hari", "Estimasi Biaya", "Peta Destinasi", "Ajukan Surat Izin"],
+        icons=["calendar-week", "calculator", "geo-alt", "file-earmark-text"],
+        menu_icon="compass",
+        default_index=0,
+        styles={
+            "container": {"padding": "5px!", "background-color": "#0A2540"},
+            "icon": {"color": "#93C5FD", "font-size": "16px"}, 
+            "nav-link": {
+                "font-size": "14px",
+                "text-align": "left",
+                "margin": "5px 0px",
+                "color": "#E2E8F0",
+                "padding": "10px 15px",
+                "border-radius": "8px"
+            },
+            "nav-link-selected": {
+                "background-color": "#1E3A8A",
+                "color": "#FFFFFF",
+                "font-weight": "600"
+            },
+            "menu-title": {
+                "color": "#94A3B8",
+                "font-size": "12px",
+                "font-weight": "bold",
+                "letter-spacing": "1px"
+            }
+        }
+    )
+    
 # Custom CSS untuk efek kartu (card layout) dan warna Biru Navy
 st.markdown("""
     <style>
