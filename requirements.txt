@@ -6,3 +6,4 @@ streamlit_folium
 st-gsheets-connection
 folium
 jason
+streamlit-option-menu
