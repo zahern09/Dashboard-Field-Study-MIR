@@ -11,10 +11,13 @@ from google.oauth2.service_account import Credentials
 
 from streamlit_option_menu import option_menu
 
-# CSS tambahan untuk mempercantik padding sidebar dan logo
+# ==========================================
+# CUSTOM CSS OVERRIDE (PUTIH & BIRU NAVY)
+# ==========================================
 st.markdown("""
     <style>
-    /* 1. Paksa latar belakang input box menjadi PUTIH dan teks HITAM GELAP */
+    /* 1. Paksa SEMUA elemen Input Box (Text & Form) berlatar PUTIH dan teks GELAP */
+    div[data-testid="stForm"] div[data-baseweb="input"],
     div[data-baseweb="input"], 
     div[data-baseweb="input"] > div, 
     div[data-baseweb="input"] input {
@@ -23,19 +26,19 @@ st.markdown("""
         -webkit-text-fill-color: #0F172A !important;
     }
 
-    /* 2. Beri border abu-abu terang agar kotak input terlihat jelas */
+    /* 2. Beri border abu-abu terang pada kotak input */
     div[data-baseweb="input"] {
         border: 1px solid #CBD5E1 !important;
         border-radius: 8px !important;
     }
 
-    /* 3. Efek saat kolom diklik (Focus) agar border berubah jadi biru terang */
+    /* 3. Efek Focus saat kolom input diklik */
     div[data-baseweb="input"]:focus-within {
         border-color: #2563EB !important;
         box-shadow: 0 0 0 1px #2563EB !important;
     }
 
-    /* 4. Teks instruksi di dalam input (Placeholder) */
+    /* 4. Teks Placeholder di dalam input */
     div[data-baseweb="input"] input::placeholder {
         color: #94A3B8 !important;
         -webkit-text-fill-color: #94A3B8 !important;
@@ -47,14 +50,8 @@ st.markdown("""
         font-weight: 600 !important;
         font-size: 15px !important;
     }
-    </style>
-""", unsafe_allow_html=True)
 
-    
-# Custom CSS untuk efek kartu (card layout) dan warna Biru Navy
-st.markdown("""
-    <style>
-    /* Mengubah container/block agar berbentuk kartu dengan shadow halus */
+    /* 6. Card Layout untuk Container Block */
     div[data-testid="stVerticalBlock"] > div[data-testid="stBlock"] {
         background-color: #FFFFFF;
         border: 1px solid #E2E8F0;
@@ -63,34 +60,28 @@ st.markdown("""
         box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     
-    /* Mengubah warna header/judul menjadi Biru Navy */
+    /* 7. Warna Header & Judul */
     h1, h2, h3 {
         color: #0A2540 !important;
     }
     
-    /* Mempercantik tampilan st.expander */
-    .streamlit-expanderHeader {
-        background-color: #F1F5F9;
-        border-radius: 8px;
-        color: #0A2540;
-        font-weight: 600;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-    <style>
-    /* Mengubah warna background dan border kotak jam */
+    /* 8. Styling st.expander (Waktu / Itinerary) */
     div[data-testid="stExpander"] {
-        background-color: #f0f7ff; /* Warna background (biru muda lembut) */
-        border: 1px solid #b3d7ff; /* Warna garis pinggir */
-        border-radius: 8px;        /* Sudut membulat */
-        margin-bottom: 10px;       /* Jarak antar kotak */
+        background-color: #F0F7FF !important;
+        border: 1px solid #B3D7FF !important;
+        border-radius: 8px !important;
+        margin-bottom: 10px !important;
     }
-    
-    /* Mengubah warna teks judul jam saat hover (diarahkan kursor) */
+
+    .streamlit-expanderHeader {
+        background-color: #F1F5F9 !important;
+        border-radius: 8px !important;
+        color: #0A2540 !important;
+        font-weight: 600 !important;
+    }
+
     div[data-testid="stExpander"]:hover {
-        border-color: #0066cc;
+        border-color: #0066CC !important;
     }
     </style>
 """, unsafe_allow_html=True)
