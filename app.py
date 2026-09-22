@@ -250,7 +250,7 @@ elif menu == "Peta Destinasi":
     
     st_folium(m, width=900, height=500)
 
-elif menu == "📄 Ajukan Surat Izin":
+elif menu == "Ajukan Surat Izin":
     st.markdown("<h1 style='text-align: center;'>📄 Form Pengajuan Surat Izin</h1>", unsafe_allow_html=True)
     st.write("Isi data di bawah ini untuk mengajukan surat izin instansi/kantor")
     conn = st.connection("gsheets", type = GSheetsConnection)
