@@ -30,8 +30,6 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-Hasil Perubahan:
-
 
 # Konfigurasi Akses
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
