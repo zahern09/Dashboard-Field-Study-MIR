@@ -243,12 +243,6 @@ elif menu == "Estimasi Biaya":
             "x": st.column_config.Column(alignment="center"),
             "Volume": st.column_config.Column(alignment="center")
     })
-    # Gantilah bagian st.write("Total Keseluruhan: ...") kamu menjadi ini:
-    col_tot1, col_tot2 = st.columns(2)
-    with col_tot1:
-        st.metric("Total Keseluruhan", "Rp 17.750.000")
-    with col_tot2:
-        st.metric("Biaya per Orang", "Rp 1.972.222")
 
 
 elif menu == "Peta Destinasi":
