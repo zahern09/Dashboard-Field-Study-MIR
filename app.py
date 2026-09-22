@@ -223,11 +223,13 @@ elif menu == "Estimasi Biaya":
             "x": st.column_config.Column(alignment="center"),
             "Volume": st.column_config.Column(alignment="center")
     })
-    st.write("---")
-    col_a, col_b = st.columns([2,1])
-    with col_b:
-        st.markdown("**Total Keseluruhan:** `Rp 17.750.000`")
-        st.markdown("**Biaya per orang:** `Rp 1.972.222`")
+    # Gantilah bagian st.write("Total Keseluruhan: ...") kamu menjadi ini:
+    col_tot1, col_tot2 = st.columns(2)
+    with col_tot1:
+        st.metric("Total Keseluruhan", "Rp 17.750.000")
+    with col_tot2:
+        st.metric("Biaya per Orang", "Rp 1.972.222")
+
 
 elif menu == "Peta Destinasi":
     st.title("🗺️ Peta Rute Perjalanan (Bandung - Merak - Lampung)")
