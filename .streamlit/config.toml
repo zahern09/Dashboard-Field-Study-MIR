@@ -1,6 +1,7 @@
 [theme]
-primaryColor = "#2563EB"                 # Biru terang (untuk tombol & fokus input)
-backgroundColor = "#F8FAFC"              # Latar belakang utama
-secondaryBackgroundColor = "#0A2540"     # Sidebar (Biru Navy)
-textColor = "#0F172A"                    # Warna teks utama (gelap)
+base = "light"
+primaryColor = "#2563EB"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#0A2540"
+textColor = "#0F172A"
 font = "sans serif"
