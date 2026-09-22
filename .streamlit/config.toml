@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#0A2540"          # Biru Navy utama (tombol, aksen)
+backgroundColor = "#F8FAFC"       # Putih sedikit keabu-abuan (latar belakang)
+secondaryBackgroundColor = "#FFFFFF" # Putih bersih (sidebar & kartu)
+textColor = "#1E293B"             # Teks abu tua agar mudah dibaca
+font = "sans serif"
