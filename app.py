@@ -11,80 +11,26 @@ from google.oauth2.service_account import Credentials
 
 from streamlit_option_menu import option_menu
 
-# ==========================================
-# CUSTOM CSS OVERRIDE (PUTIH & BIRU NAVY)
-# ==========================================
+# --- CSS KHUSUS MEMAKSA SIDEBAR NAVY & KONTEN UTAMA TERANG ---
 st.markdown("""
     <style>
-    /* 1. Paksa SEMUA elemen Input Box (Text & Form) berlatar PUTIH dan teks GELAP */
-    div[data-testid="stForm"] div[data-baseweb="input"],
-    div[data-baseweb="input"], 
-    div[data-baseweb="input"] > div, 
-    div[data-baseweb="input"] input {
+    /* 1. Memaksa Sidebar Kiri berwarna Biru Navy */
+    section[data-testid="stSidebar"] {
+        background-color: #0A2540 !important;
+    }
+    
+    /* 2. Memaksa Latar Belakang Konten Utama Putih Bersih */
+    .stApp {
         background-color: #FFFFFF !important;
-        color: #0F172A !important;
-        -webkit-text-fill-color: #0F172A !important;
-    }
-
-    /* 2. Beri border abu-abu terang pada kotak input */
-    div[data-baseweb="input"] {
-        border: 1px solid #CBD5E1 !important;
-        border-radius: 8px !important;
-    }
-
-    /* 3. Efek Focus saat kolom input diklik */
-    div[data-baseweb="input"]:focus-within {
-        border-color: #2563EB !important;
-        box-shadow: 0 0 0 1px #2563EB !important;
-    }
-
-    /* 4. Teks Placeholder di dalam input */
-    div[data-baseweb="input"] input::placeholder {
-        color: #94A3B8 !important;
-        -webkit-text-fill-color: #94A3B8 !important;
-    }
-
-    /* 5. Label judul input (Nama Lengkap, Tujuan Surat) */
-    label[data-testid="stWidgetLabel"] p {
-        color: #0F172A !important;
-        font-weight: 600 !important;
-        font-size: 15px !important;
-    }
-
-    /* 6. Card Layout untuk Container Block */
-    div[data-testid="stVerticalBlock"] > div[data-testid="stBlock"] {
-        background-color: #FFFFFF;
-        border: 1px solid #E2E8F0;
-        border-radius: 10px;
-        padding: 18px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     
-    /* 7. Warna Header & Judul */
-    h1, h2, h3 {
-        color: #0A2540 !important;
-    }
-    
-    /* 8. Styling st.expander (Waktu / Itinerary) */
-    div[data-testid="stExpander"] {
-        background-color: #F0F7FF !important;
-        border: 1px solid #B3D7FF !important;
-        border-radius: 8px !important;
-        margin-bottom: 10px !important;
-    }
-
-    .streamlit-expanderHeader {
-        background-color: #F1F5F9 !important;
-        border-radius: 8px !important;
-        color: #0A2540 !important;
-        font-weight: 600 !important;
-    }
-
-    div[data-testid="stExpander"]:hover {
-        border-color: #0066CC !important;
+    /* 3. Menjaga Teks Label dan Input Tetap Hitam/Gelap */
+    label, p, h1, h2, h3, span {
+        color: #0F172A;
     }
     </style>
 """, unsafe_allow_html=True)
+Hasil Perubahan:
 
 
 # Konfigurasi Akses
