@@ -9,6 +9,33 @@ from streamlit_gsheets import GSheetsConnection
 import gspread
 from google.oauth2.service_account import Credentials
 
+# Custom CSS untuk efek kartu (card layout) dan warna Biru Navy
+st.markdown("""
+    <style>
+    /* Mengubah container/block agar berbentuk kartu dengan shadow halus */
+    div[data-testid="stVerticalBlock"] > div[data-testid="stBlock"] {
+        background-color: #FFFFFF;
+        border: 1px solid #E2E8F0;
+        border-radius: 10px;
+        padding: 18px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    /* Mengubah warna header/judul menjadi Biru Navy */
+    h1, h2, h3 {
+        color: #0A2540 !important;
+    }
+    
+    /* Mempercantik tampilan st.expander */
+    .streamlit-expanderHeader {
+        background-color: #F1F5F9;
+        border-radius: 8px;
+        color: #0A2540;
+        font-weight: 600;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 st.markdown("""
     <style>
     /* Mengubah warna background dan border kotak jam */
@@ -115,10 +142,11 @@ if menu == "Itinerary Hari ke Hari":
 
 elif menu == "Estimasi Biaya":
     st.title("💰 Estimasi & Rincian Biaya")
-    col1, col2, col3 = st.columns(3)
-    col1.metric("Total Anggaran (RAB)", "Rp 17.750.000")
-    col2.metric("Target Peserta", "10 Orang")
-    col3.metric("Biaya per Orang", "Rp 1.972.222")
+    with st.container(border=True):
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Total Anggaran (RAB)", "Rp 17.750.000")
+        col2.metric("Target Peserta", "10 Orang")
+        col3.metric("Biaya per Orang", "Rp 1.972.222")
     
     st.divider()
     st.write("### Rincian Anggaran Perjalanan")
