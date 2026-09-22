@@ -14,14 +14,22 @@ from streamlit_option_menu import option_menu
 # CSS tambahan untuk mempercantik padding sidebar dan logo
 st.markdown("""
     <style>
-    /* Mengubah warna teks di dalam sidebar menjadi putih */
-    section[data-testid="stSidebar"] {
-        color: #FFFFFF;
+    /* Mengunci latar belakang input box agar selalu terang & teks gelap */
+    div[data-baseweb="input"] > div {
+        background-color: #FFFFFF !important;
+        color: #0F172A !important;
+        border: 1px solid #CBD5E1 !important;
     }
     
-    /* Jarak antara logo dan judul di sidebar */
-    [data-testid="stSidebar"] img {
-        margin-bottom: 15px;
+    /* Mengubah warna teks yang diketik di dalam input */
+    input {
+        color: #0F172A !important;
+    }
+    
+    /* Menjaga warna label input tetap gelap */
+    label[data-testid="stWidgetLabel"] {
+        color: #0F172A !important;
+        font-weight: 600;
     }
     </style>
 """, unsafe_allow_html=True)
