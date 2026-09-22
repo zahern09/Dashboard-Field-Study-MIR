@@ -92,10 +92,15 @@ st.set_page_config(page_title="Dashboard Itinerary & Perizinan MIR UNPAD", page_
 
 # --- SIDEBAR NAVIGASI ---
 with st.sidebar:
-    # (Opsional) Tampilkan Logo & Judul di Sidebar
-    st.image(LOGO, width=120)
-    st.markdown("<h2 style='color: white; font-size: 20px; font-weight: bold;'>Dashboard MIR</h2>", unsafe_allow_html=True)
-    st.write("---")
+    # Memberikan jarak sedikit dari batas atas sidebar
+    st.markdown("<div style='margin-top: 15px;'></div>", unsafe_allow_html=True)
+    
+    # Trik meletakkan gambar di tengah menggunakan 3 kolom (kiri, tengah, kanan)
+    col_left, col_center, col_right = st.columns([1, 2, 1])
+    with col_center:
+        st.image("Logo MIR 26.jfif", use_container_width=True)
+        
+    st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
     
     # Navigasi Menu Modern ber-Ikon
     menu = option_menu(
