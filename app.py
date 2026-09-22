@@ -14,22 +14,38 @@ from streamlit_option_menu import option_menu
 # CSS tambahan untuk mempercantik padding sidebar dan logo
 st.markdown("""
     <style>
-    /* Mengunci latar belakang input box agar selalu terang & teks gelap */
-    div[data-baseweb="input"] > div {
+    /* 1. Paksa latar belakang input box menjadi PUTIH dan teks HITAM GELAP */
+    div[data-baseweb="input"], 
+    div[data-baseweb="input"] > div, 
+    div[data-baseweb="input"] input {
         background-color: #FFFFFF !important;
         color: #0F172A !important;
+        -webkit-text-fill-color: #0F172A !important;
+    }
+
+    /* 2. Beri border abu-abu terang agar kotak input terlihat jelas */
+    div[data-baseweb="input"] {
         border: 1px solid #CBD5E1 !important;
+        border-radius: 8px !important;
     }
-    
-    /* Mengubah warna teks yang diketik di dalam input */
-    input {
-        color: #0F172A !important;
+
+    /* 3. Efek saat kolom diklik (Focus) agar border berubah jadi biru terang */
+    div[data-baseweb="input"]:focus-within {
+        border-color: #2563EB !important;
+        box-shadow: 0 0 0 1px #2563EB !important;
     }
-    
-    /* Menjaga warna label input tetap gelap */
-    label[data-testid="stWidgetLabel"] {
+
+    /* 4. Teks instruksi di dalam input (Placeholder) */
+    div[data-baseweb="input"] input::placeholder {
+        color: #94A3B8 !important;
+        -webkit-text-fill-color: #94A3B8 !important;
+    }
+
+    /* 5. Label judul input (Nama Lengkap, Tujuan Surat) */
+    label[data-testid="stWidgetLabel"] p {
         color: #0F172A !important;
-        font-weight: 600;
+        font-weight: 600 !important;
+        font-size: 15px !important;
     }
     </style>
 """, unsafe_allow_html=True)
