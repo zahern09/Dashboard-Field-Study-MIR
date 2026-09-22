@@ -199,7 +199,7 @@ elif menu == "Peta Destinasi":
     folium.Marker([-6.8915, 107.6107], popup="Start: Kampus SPS UNPAD Dipatiukur", tooltip="Start: Bandung", icon=folium.Icon(color="red")).add_to(m)
     folium.Marker([-5.9322, 105.9982], popup="Pelabuhan Merak", tooltip="Pelabuhan Merak", icon=folium.Icon(color="orange")).add_to(m)
     folium.Marker([-5.8703, 105.7523], popup="Pelabuhan Bakauhuni", tooltip="Pelabuhan Bakauhuni", icon=folium.Icon(color="blue")).add_to(m)
-    folium.Marker([-5.4292, 105.2625], popup="Tujuan: Bandar Lampung", tooltip="Hotel / Lampung", icon=folium.Icon(color="green")).add_to(m)
+    folium.Marker([-5.388081430726379, 105.25691746435807], popup="Tujuan", tooltip="Solla Terra Workspace", icon=folium.Icon(color="green")).add_to(m)
     
     st_folium(m, width=900, height=500)
 
