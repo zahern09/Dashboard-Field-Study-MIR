@@ -1,6 +1,6 @@
 [theme]
-primaryColor = "#3B82F6"                 # Warna aksen biru terang saat di-hover/pilih
-backgroundColor = "#F8FAFC"              # Warna latar belakang halaman (putih-abu)
-secondaryBackgroundColor = "#0A2540"     # Warna sidebar kiri (Biru Navy)
-textColor = "#1E293B"                    # Warna teks utama
+primaryColor = "#2563EB"                 # Biru terang (untuk tombol & fokus input)
+backgroundColor = "#F8FAFC"              # Latar belakang utama
+secondaryBackgroundColor = "#0A2540"     # Sidebar (Biru Navy)
+textColor = "#0F172A"                    # Warna teks utama (gelap)
 font = "sans serif"
