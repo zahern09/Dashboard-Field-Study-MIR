@@ -97,9 +97,9 @@ with st.sidebar:
 if menu == "Itinerary Hari ke Hari":
     st.title("📅 Itinerary Field Study MIR UNPAD 2026")
     tab1, tab2, tab3 = st.tabs([
-        "Hari 1 (Jumat, 16 Oktober 2026): Keberangkatan", 
-        "Hari 2 (Sabtu, 17 Oktober 2026): Agenda Utama",
-        "Hari 3 (Minggu, 18 Oktober 2026): Kepulangan"
+        "Hari 1 (Jumat, 13 November 2026): Keberangkatan", 
+        "Hari 2 (Sabtu, 14 November 2026): Agenda Utama",
+        "Hari 3 (Minggu, 15 November 2026): Kepulangan"
     ])
     
     with tab1:
