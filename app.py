@@ -64,7 +64,7 @@ with st.sidebar:
     # Navigasi Menu Modern ber-Ikon
     menu = option_menu(
         menu_title="PILIH MENU",
-        options=["Itinerary Hari ke Hari", "Estimasi Biaya", "Peta Destinasi", "Ajukan Surat Izin"],
+        options=["Itinerary Hari ke Hari", "Peta Destinasi", "Ajukan Surat Izin"],
         icons=["calendar-week", "calculator", "geo-alt", "file-earmark-text"],
         menu_icon="compass",
         default_index=0,
@@ -154,39 +154,6 @@ if menu == "Itinerary Hari ke Hari":
             st.write("Perjalanan menuju Jakarta sembari menurunkan tim yang di Jakarta")
         with st.expander("16:30 - 19:00 | Jakarta - Bandung"):
             st.write("Perjalanan menuju Bandung dan berakhirnya kegiatan turun lapang MIR 2026")
-
-elif menu == "Estimasi Biaya":
-    st.title("💰 Estimasi & Rincian Biaya")
-    with st.container(border=True):
-        col1, col2, col3 = st.columns(3)
-        col1.metric("Total Anggaran (RAB)", "Rp 17.750.000")
-        col2.metric("Target Peserta", "10 Orang")
-        col3.metric("Biaya per Orang", "Rp 1.972.222")
-    
-    st.divider()
-    st.write("### Rincian Anggaran Perjalanan")
-    rab_data = pd.DataFrame({
-       "No": [1, 2, 3, 4, 5],
-       "Kegiatan": [
-            "Sewa Hiace (Pulang Pergi - 9 Pax)",
-            "Hotel",
-            "Tiket Kapal",
-            "Makan",
-            "Bensin"
-        ],
-        "Qty": [1, 6, 1, 10, 1],
-        "x": ["x", "x", "x", "x", "x"],
-        "Volume": [3, 2, 2, 4, 1],
-        "Harga/Pax (Rp)": ["1.750.000", "500.000", "750.000", "100.000", "1.000.000"],
-        "Total Harga (Rp)": ["5.250.000", "6.000.000", "1.500.000", "4.000.000", "1.000.000"]
-    })
-    st.dataframe(rab_data, use_container_width=True, hide_index = True, 
-         column_config={
-            "No": st.column_config.Column(alignment="center"),
-            "Qty": st.column_config.Column(alignment="center"),
-            "x": st.column_config.Column(alignment="center"),
-            "Volume": st.column_config.Column(alignment="center")
-    })
 
 
 elif menu == "Peta Destinasi":
